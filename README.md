@@ -29,3 +29,9 @@ touch w0x7ce_rviz2_fishbot_base.urdf
 └── urdf
     └── fishbot_base.urdf
 ```
+
+## plugins
+
+sudo apt install ros-humble-imu-* -y
+
+

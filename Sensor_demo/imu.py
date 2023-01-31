@@ -14,8 +14,8 @@ class MinimalPublisher(Node):
         self.publisher_imu = self.create_publisher(Imu, 'topic_imu', 10)
         
         self.ranges = [float('NaN'), 1.0, -float('Inf'), 3.0, float('Inf')]
-        self.min_range = 0.01
-        self.max_range = 0.5
+        self.min_range = 0.1
+        self.max_range = 5.060
         
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -28,7 +28,7 @@ class MinimalPublisher(Node):
         msg.field_of_view = 0.1
         msg.min_range = self.min_range
         msg.max_range = self.max_range
-        msg.range = random.uniform(0.01, 0.15)
+        msg.range = random.uniform(0.1, 4)
         
         # msg.header.frame_id = "/ultrasonic_sensor_link"
         # self.publisher_.publish(msg)

@@ -46,16 +46,22 @@ class MinimalPublisher(Node):
         
         memData = [1.0,2.0,3.0,3.0,2.0,1.0,1.0,2.0,3.1,2.1]
         
-        #self.torsoIMU.orientation.x = q[0]
-        #self.torsoIMU.orientation.y = q[1]
-        #self.torsoIMU.orientation.z = q[2]
-        #self.torsoIMU.orientation.w = q[3]
-        self.torsoIMU.angular_velocity.x = random.uniform(0.1, 4)
-        self.torsoIMU.angular_velocity.y = random.uniform(0.1, 4)
-        self.torsoIMU.angular_velocity.z = random.uniform(0.1, 4)
-        self.torsoIMU.linear_acceleration.x = random.uniform(0.1, 4)
-        self.torsoIMU.linear_acceleration.y = random.uniform(0.1, 4)
-        self.torsoIMU.linear_acceleration.z = random.uniform(0.1, 4)
+        # self.torsoIMU.orientation.x = q[0]
+        # self.torsoIMU.orientation.y = q[1]
+        # self.torsoIMU.orientation.z = q[2]
+        # self.torsoIMU.orientation.w = q[3]
+        
+        self.torsoIMU.orientation.x = random.uniform(0.1, 2)
+        self.torsoIMU.orientation.y = random.uniform(0.1, 2)
+        self.torsoIMU.orientation.z = random.uniform(0.1, 2)
+        self.torsoIMU.orientation.w = random.uniform(0.1, 2)
+        
+        self.torsoIMU.angular_velocity.x = random.uniform(0.1, 2)
+        self.torsoIMU.angular_velocity.y = random.uniform(0.1, 2)
+        self.torsoIMU.angular_velocity.z = random.uniform(0.1, 2)
+        self.torsoIMU.linear_acceleration.x = random.uniform(0.1, 2)
+        self.torsoIMU.linear_acceleration.y = random.uniform(0.1, 2)
+        self.torsoIMU.linear_acceleration.z = random.uniform(0.1, 2)
         
         self.publisher_imu.publish(self.torsoIMU)
         self.get_logger().info('Publishing: "%s"' % msg)
